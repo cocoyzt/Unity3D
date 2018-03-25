@@ -34,10 +34,10 @@ public class Chess : MonoBehaviour
         {
             for (int j = 0; j < 3; j++)
             {
-                if (ChessBoard[i, j] == 1) GUI.Button(new Rect(300 + i * 100, 200 + j * 100, 80, 80), "1");
-                else if (ChessBoard[i, j] == 2) GUI.Button(new Rect(300 + i * 100, 200 + j * 100, 80, 80), "2");
+                if (ChessBoard[i, j] == 1) GUI.Button(new Rect(240 + i * 100, 200 + j * 100, 80, 80), "1");
+                else if (ChessBoard[i, j] == 2) GUI.Button(new Rect(240 + i * 100, 200 + j * 100, 80, 80), "2");
 
-                if (GUI.Button(new Rect(300 + i * 100, 200 + j * 100, 80, 80), ""))
+                if (GUI.Button(new Rect(240 + i * 100, 200 + j * 100, 80, 80), ""))
                 {
                     if (InGame)
                     {
@@ -70,18 +70,35 @@ public class Chess : MonoBehaviour
             }
         }
         InGame = true;
+        Winner = 0;
     }
 
     void Check()
     {
         InGame = false;
+        if (ChessBoard[0, 0] == ChessBoard[1, 1] && ChessBoard[2, 2] == ChessBoard[1, 1] && ChessBoard[1, 1] != 0)
+        {
+            Winner = ChessBoard[1, 1];
+            return;
+        }
+        if (ChessBoard[2, 0] == ChessBoard[1, 1] && ChessBoard[0, 2] == ChessBoard[1, 1] && ChessBoard[1, 1] != 0)
+        {
+            Winner = ChessBoard[1, 1];
+            return;
+        }
         for (int i = 0; i < 3; i++)
         {
-            if (ChessBoard[i, 0] == ChessBoard[i, 1] && ChessBoard[i, 2] == ChessBoard[i, 1]) Winner = ChessBoard[i, 1];
-            if (ChessBoard[0, i] == ChessBoard[1, i] && ChessBoard[2, i] == ChessBoard[1, i]) Winner = ChessBoard[1, i];
+            if (ChessBoard[i, 0] == ChessBoard[i, 1] && ChessBoard[i, 2] == ChessBoard[i, 1] && ChessBoard[i, 1] != 0)
+            {
+                Winner = ChessBoard[i, 1];
+                return;
+            }
+            if (ChessBoard[0, i] == ChessBoard[1, i] && ChessBoard[2, i] == ChessBoard[1, i] && ChessBoard[1, i] != 0)
+            {
+                Winner = ChessBoard[1, i];
+                return;
+            }   
         }
-        if (ChessBoard[0, 0] == ChessBoard[1, 1] && ChessBoard[2, 2] == ChessBoard[1, 1]) Winner = ChessBoard[1, 1];
-        if (ChessBoard[2, 0] == ChessBoard[1, 1] && ChessBoard[0, 2] == ChessBoard[1, 1]) Winner = ChessBoard[1, 1];
         if (Winner == 0) InGame = true;
     }
 

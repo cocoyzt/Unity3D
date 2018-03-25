@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 350567973}
   - component: {fileID: 350567972}
   - component: {fileID: 350567976}
+  - component: {fileID: 350567977}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 350567971}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 428d97ede58165a4d91c90a45405213c, type: 3}
   m_Name: 
@@ -209,6 +210,17 @@ MonoBehaviour:
   IsPlayer1: 1
   InGame: 1
   Winner: 0
+--- !u!114 &350567977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 350567971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10181c8d280275b4b84f4d274d2dd91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2144636476
 GameObject:
   m_ObjectHideFlags: 0

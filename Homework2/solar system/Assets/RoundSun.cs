@@ -17,16 +17,24 @@ public class RoundSun : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		float Random_y = Random.Range (-5, 5);
         Sun.position = Vector3.zero;
-		Mercury.position = new Vector3 (27, 0, 0);
-		Venus.position = new Vector3 (40, 0, 0);
-        Earth.position = new Vector3(50, 0, 0);
-        Moon.position = new Vector3(50, 4, 0);
-		Mars.position = new Vector3 (63, 0, 0);
-		Jupiter.position = new Vector3 (78, 0, 0);
-		Saturn.position = new Vector3 (95, 0, 0);
-		Uranus.position = new Vector3 (107, 0, 0);
-		Neptune.position = new Vector3 (120, 0, 0);
+		Mercury.position = new Vector3 (27,Random_y, 0);
+		Random_y = Random.Range (-5, 5);
+		Venus.position = new Vector3 (40,Random_y, 0);
+		Random_y = Random.Range (-5, 5);
+		Earth.position = new Vector3(50,Random_y, 0);
+		Moon.position = new Vector3(50,Random_y + 4, 0);
+		Random_y = Random.Range (-5, 5);
+		Mars.position = new Vector3 (63,Random_y, 0);
+		Random_y = Random.Range (-5, 5);
+		Jupiter.position = new Vector3 (78,Random_y, 0);
+		Random_y = Random.Range (-5, 5);
+		Saturn.position = new Vector3 (95,Random_y, 0);
+		Random_y= Random.Range (-5, 5);
+		Uranus.position = new Vector3 (107,Random_y, 0);
+		Random_y = Random.Range (-5, 5);
+		Neptune.position = new Vector3 (120,Random_y, 0);
 	}
 	
 	// Update is called once per frame

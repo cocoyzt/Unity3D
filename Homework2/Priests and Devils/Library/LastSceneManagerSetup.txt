@@ -1,0 +1,4 @@
+sceneSetups:
+- path: C:/Users/g/Downloads/Priests-and-devils-master/Assets/ass.unity
+  isLoaded: 1
+  isActive: 1

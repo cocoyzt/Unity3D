@@ -125,7 +125,7 @@ public class FirstSceneController : MonoBehaviour ,ISceneController, IUserAction
 	}
 
 	public void GameOver(){
-		GUI.Label (new Rect (700, 200, 800, 450), "GameOver!");
+		GUI.Label (new Rect (465, 50, 800, 450), "GameOver!");
 	}
 
 	public GameState check(){

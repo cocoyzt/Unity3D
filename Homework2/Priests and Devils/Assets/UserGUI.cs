@@ -15,7 +15,7 @@ public class UserGUI : MonoBehaviour {
 			action.MoveBoat ();
 
 		if(action.getGameState() == GameState.WIN)
-			GUI.Label (new Rect (450, 50, 800, 450), "Win!");
+			GUI.Label (new Rect (490, 50, 800, 450), "Win!");
 
 		if (action.getGameState () == GameState.FAILED)
 			action.GameOver ();

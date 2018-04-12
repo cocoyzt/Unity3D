@@ -10,8 +10,7 @@ public interface IUserAction{
 	void Begin ();
 	void GameOver ();
 	void DisplayScore ();
-	void ChoseRound ();
+	void ChooseRound ();
 	void PAUSE ();
 	void GoOn ();
-	int getScore ();
 }

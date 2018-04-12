@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AddSpeed.cs" />
+     <Compile Include="Assets\ClickToDestory.cs" />
      <Compile Include="Assets\Director.cs" />
      <Compile Include="Assets\FirstSceneController.cs" />
      <Compile Include="Assets\ISceneController.cs" />

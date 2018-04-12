@@ -26,18 +26,26 @@ public class UIManager : MonoBehaviour {
 				action.Begin ();
 			}
 		} else if (Director.getInstance().game_state == GameState.DISPLAY_SCORE) {
-			GUI.Label (new Rect (400, 200, 200, 80), action.getScore().ToString());
-			if (GUI.Button (new Rect (400, 400, 100, 40), "ReStart")) {
-				action.ReStart ();
+			GUI.Label (new Rect (500, 50, 200, 80), "Score:" + Director.getInstance ().score.ToString());
+			if (GUI.Button (new Rect (600, 50, 100, 40), "ReStart")) {
+				action.ReStart();
+			}
+			if (GUI.Button (new Rect (700, 50, 100, 40), "Choose Round")) {
+				action.ChooseRound ();
 			}
 		} else if (Director.getInstance().game_state == GameState.IN_GAME) {
+			GUI.Label (new Rect (500, 50, 200, 80), "Score:" + Director.getInstance ().score.ToString());
 			if (GUI.Button (new Rect (600, 50, 100, 40), "Pause")) {
 				action.PAUSE ();
+			}
+			if (GUI.Button (new Rect (700, 50, 100, 40), "End")) {
+				action.GameOver ();
 			}
 		} else if (Director.getInstance().game_state == GameState.PAUSE) {
 			if (GUI.Button (new Rect (600, 50, 100, 40), "GoOn")) {
 				action.GoOn ();
 			}
+			GUI.Label (new Rect (400, 50, 400, 400), "Pausing!!!");
 		}
 	}
 }

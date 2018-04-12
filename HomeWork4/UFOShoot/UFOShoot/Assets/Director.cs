@@ -6,6 +6,7 @@ public enum GameState {IN_GAME, END, CHOOSE_ROUND, DISPLAY_SCORE, PAUSE}
 
 public class Director : System.Object {
 
+	public int score = 0;
 	public RoundState round_state = RoundState.EASY;
 	public GameState game_state = GameState.CHOOSE_ROUND;
 	public bool running { get; set;}

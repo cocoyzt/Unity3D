@@ -5,8 +5,7 @@ using UnityEngine;
 public class ClickToDestory : MonoBehaviour {
 
 	private void OnMouseDown(){
-		Destroy (gameObject, 0);
-		Debug.Log ("Clicking!");
+		UFOFactory.getInstance ().releaseUFO (gameObject);
 		Director.getInstance ().score += 2;
 	}
 }

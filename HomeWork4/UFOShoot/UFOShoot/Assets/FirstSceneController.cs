@@ -8,12 +8,14 @@ public class FirstSceneController : MonoBehaviour ,ISceneController, IUserAction
 	public int SpeedOfUFO = 0;
 	public int ScoreOfUFO = 0;
 	public int TotalUFO = 0;
-	public GameObject UFO;
+	public int display_num = 3;
+	public bool IfDisplayNum = false;
+	/*public GameObject UFO;*/
 
 	public void Awake(){
 		Director.getInstance ().currentSceneControl = this;
 		if(Director.getInstance ().currentSceneControl != null) Debug.Log ("NOTEMPTY");
-		UFO = (GameObject)Resources.Load ("UAV Trident");
+		/*UFO = (GameObject)Resources.Load ("UAV Trident");*/
 	}
 
 	public void GenGameObjects (){
@@ -31,6 +33,8 @@ public class FirstSceneController : MonoBehaviour ,ISceneController, IUserAction
 		SetNumSpeed ();
 		Director.getInstance ().game_state = GameState.IN_GAME;
 		InvokeRepeating ("CreateUFO", 3f, 1f);
+		display_num = 4;
+		InvokeRepeating ("DisplayNum", 0f, 1f);
 	}
 
 	public void GameOver (){
@@ -51,39 +55,44 @@ public class FirstSceneController : MonoBehaviour ,ISceneController, IUserAction
 	public void GoOn (){
 		Director.getInstance ().game_state = GameState.IN_GAME;
 		InvokeRepeating ("CreateUFO", 3f, 1f);
+		display_num = 4;
+		InvokeRepeating ("DisplayNum", 0f, 1f);
 	}
 		
 	public void SetNumSpeed(){
 		if (Director.getInstance ().round_state == RoundState.EASY) {
 			NumOfUFO = 10;
-			SpeedOfUFO = 1;
+			SpeedOfUFO = 12;
 			ScoreOfUFO = 4;
 		}else if (Director.getInstance ().round_state == RoundState.EASY) {
 			NumOfUFO = 20;
-			SpeedOfUFO = 1;
+			SpeedOfUFO = 12;
 			ScoreOfUFO = 2;
 		}
 		else {
 			NumOfUFO = 20;
-			SpeedOfUFO = 2;
+			SpeedOfUFO = 16;
 			ScoreOfUFO = 2;
 		}
 	}
 
 	public void CreateUFO(){
-		GameObject UFOtemp = Instantiate (UFO);
-		UFOtemp.transform.localScale = new Vector3 (3f, 3f, 3f);
-		UFOtemp.transform.Rotate(90, 0, 0);
-		UFOtemp.transform.position = new Vector3 (Random.Range(-5f, 5f), Random.Range(0, 5f), 0);
-		UFOtemp.AddComponent<ClickToDestory> ();
-		UFOtemp.AddComponent<AddSpeed> ();
-		TotalUFO++;
+		UFOFactory.getInstance ().getNewUFO ();
 	}
 
 	public void Update(){
-		if (TotalUFO > NumOfUFO) {
-			CancelInvoke();
+		if (UFOFactory.getInstance().usingUFO.Count >= NumOfUFO) {
+			CancelInvoke("CreateUFO");
 			this.GameOver ();
 		}
+		if (display_num < 1) {
+			IfDisplayNum = false;
+			CancelInvoke ("DisplayNum");
+		}
+	}
+
+	public void DisplayNum(){
+		display_num --;
+		IfDisplayNum = true;
 	}
 }

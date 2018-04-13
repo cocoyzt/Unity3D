@@ -6,7 +6,7 @@ public class AddSpeed : MonoBehaviour {
 
 	public float speed_vz;
 	public float speed_vx;
-	public float speed_vy = 0;
+	public float speed_vy = 5f;
 	private float g = 9.8f;
 	public float t = 0;
 	private FirstSceneController firstSceneController;
@@ -15,7 +15,11 @@ public class AddSpeed : MonoBehaviour {
 	void Start () {
 		firstSceneController = (FirstSceneController)Director.getInstance ().currentSceneControl;
 		speed_vz = firstSceneController.SpeedOfUFO;
-		speed_vx = Random.Range (-5f, 5f);
+		speed_vx = Random.Range (-8f, 8f);
+		if (gameObject.transform.position.x > 0)
+			speed_vx += 30f;
+		else
+			speed_vx -= 30f;
 	}
 	
 	// Update is called once per frame

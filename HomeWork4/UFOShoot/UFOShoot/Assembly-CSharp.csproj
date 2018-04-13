@@ -57,6 +57,7 @@
      <Compile Include="Assets\FirstSceneController.cs" />
      <Compile Include="Assets\ISceneController.cs" />
      <Compile Include="Assets\IUserAction.cs" />
+     <Compile Include="Assets\UFOFactory.cs" />
      <Compile Include="Assets\UIManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

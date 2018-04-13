@@ -6,15 +6,22 @@ public class UIManager : MonoBehaviour {
 
 	private IUserAction action;
 	public GUISkin MySkin;
+	private FirstSceneController firstSceneController;
 
 	void Start(){
 		action = Director.getInstance ().currentSceneControl as IUserAction;
+		firstSceneController = (FirstSceneController)Director.getInstance ().currentSceneControl;
 	}
 
 	void OnGUI(){
+		Debug.Log (Director.getInstance ().game_state.ToString());
 		GUI.skin = MySkin;
+		if(firstSceneController.IfDisplayNum == true &&
+			Director.getInstance().game_state == GameState.IN_GAME){
+			GUI.Label (new Rect (400, 250, 100, 40), firstSceneController.display_num.ToString());
+		}
 		if (Director.getInstance().game_state == GameState.CHOOSE_ROUND) {
-			GUI.Label (new Rect (600, 50, 100, 40), "Choose Round!");
+			GUI.Label (new Rect (600, 50, 200, 50), "Choose Round!");
 			if (GUI.Button (new Rect (600, 200, 100, 40), "Easy")) {
 				Director.getInstance ().round_state = RoundState.EASY;
 				action.Begin ();
@@ -32,8 +39,9 @@ public class UIManager : MonoBehaviour {
 			if (GUI.Button (new Rect (600, 50, 100, 40), "ReStart")) {
 				action.ReStart();
 			}
-			if (GUI.Button (new Rect (700, 50, 100, 40), "Choose Round")) {
+			if (GUI.Button (new Rect (700, 50, 150, 40), "Choose Round")) {
 				action.ChooseRound ();
+				Debug.Log (Director.getInstance().game_state.ToString());
 			}
 		} else if (Director.getInstance().game_state == GameState.IN_GAME) {
 			GUI.Label (new Rect (500, 50, 200, 80), "Score:" + Director.getInstance ().score.ToString());

@@ -5,12 +5,14 @@ using UnityEngine;
 public class UIManager : MonoBehaviour {
 
 	private IUserAction action;
+	public GUISkin MySkin;
 
 	void Start(){
 		action = Director.getInstance ().currentSceneControl as IUserAction;
 	}
 
 	void OnGUI(){
+		GUI.skin = MySkin;
 		if (Director.getInstance().game_state == GameState.CHOOSE_ROUND) {
 			GUI.Label (new Rect (600, 50, 100, 40), "Choose Round!");
 			if (GUI.Button (new Rect (600, 200, 100, 40), "Easy")) {

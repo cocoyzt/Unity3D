@@ -8,10 +8,12 @@ public class FirstSceneController : MonoBehaviour ,ISceneController, IUserAction
 	public int SpeedOfUFO = 0;
 	public int ScoreOfUFO = 0;
 	public int TotalUFO = 0;
+	public GameObject UFO;
 
 	public void Awake(){
 		Director.getInstance ().currentSceneControl = this;
 		if(Director.getInstance ().currentSceneControl != null) Debug.Log ("NOTEMPTY");
+		UFO = (GameObject)Resources.Load ("UAV Trident");
 	}
 
 	public void GenGameObjects (){
@@ -69,7 +71,9 @@ public class FirstSceneController : MonoBehaviour ,ISceneController, IUserAction
 	}
 
 	public void CreateUFO(){
-		GameObject UFOtemp = GameObject.CreatePrimitive (PrimitiveType.Capsule);
+		GameObject UFOtemp = Instantiate (UFO);
+		UFOtemp.transform.localScale = new Vector3 (3f, 3f, 3f);
+		UFOtemp.transform.Rotate(90, 0, 0);
 		UFOtemp.transform.position = new Vector3 (Random.Range(-5f, 5f), Random.Range(0, 5f), 0);
 		UFOtemp.AddComponent<ClickToDestory> ();
 		UFOtemp.AddComponent<AddSpeed> ();

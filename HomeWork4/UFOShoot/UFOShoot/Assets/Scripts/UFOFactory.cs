@@ -8,6 +8,7 @@ public class UFOFactory : System.Object {
 	public List<GameObject> usingUFO;
 	private List<GameObject> usedUFO;
 	private GameObject ExplosionPrefab;
+	private FirstSceneController firstSceneController;
 
 	public static UFOFactory getInstance(){
 		if (_instance == null)
@@ -19,11 +20,13 @@ public class UFOFactory : System.Object {
 		usingUFO = new List<GameObject>();
 		usedUFO = new List<GameObject>();
 
-		ExplosionPrefab = Resources.Load ("Explosion", typeof(GameObject)) as GameObject;
+		ExplosionPrefab = Resources.Load ("Prefabs/Explosion", typeof(GameObject)) as GameObject;
+		firstSceneController = (FirstSceneController)Director.getInstance ().currentSceneControl;
 	}
 
 	public GameObject getNewUFO(){
 		GameObject newUFO;
+		firstSceneController.UsedUFONum++;
 
 		if (usedUFO.Count == 0) {
 			newUFO = GameObject.CreatePrimitive (PrimitiveType.Cylinder);
@@ -54,12 +57,15 @@ public class UFOFactory : System.Object {
 		return newUFO;
 	}
 
-	public void releaseUFO(GameObject UFOtoRelease){
+	public void releaseUFO(GameObject UFOtoRelease, bool IsChick){
 		usingUFO.Remove (UFOtoRelease);
-		usingUFO.Add (UFOtoRelease);
+		usedUFO.Add (UFOtoRelease);
 		UFOtoRelease.SetActive (false);
 
 		/*Instantiate explosion*/
-		UnityEngine.Object.Instantiate (ExplosionPrefab, UFOtoRelease.transform.position, Quaternion.identity);
+		if (IsChick) {
+			GameObject ExplosionTemp = UnityEngine.Object.Instantiate (ExplosionPrefab, UFOtoRelease.transform.position, Quaternion.identity);
+			firstSceneController.ExplosionList.Add (ExplosionTemp);
+		}
 	}
 }

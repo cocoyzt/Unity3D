@@ -51,14 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AddSpeed.cs" />
-     <Compile Include="Assets\ClickToDestory.cs" />
-     <Compile Include="Assets\Director.cs" />
-     <Compile Include="Assets\FirstSceneController.cs" />
-     <Compile Include="Assets\ISceneController.cs" />
-     <Compile Include="Assets\IUserAction.cs" />
-     <Compile Include="Assets\UFOFactory.cs" />
-     <Compile Include="Assets\UIManager.cs" />
+     <Compile Include="Assets\Scripts\AddSpeed.cs" />
+     <Compile Include="Assets\Scripts\ClickToDestory.cs" />
+     <Compile Include="Assets\Scripts\Director.cs" />
+     <Compile Include="Assets\Scripts\FirstSceneController.cs" />
+     <Compile Include="Assets\Scripts\ISceneController.cs" />
+     <Compile Include="Assets\Scripts\IUserAction.cs" />
+     <Compile Include="Assets\Scripts\UFOFactory.cs" />
+     <Compile Include="Assets\Scripts\UIManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

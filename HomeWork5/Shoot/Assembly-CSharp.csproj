@@ -51,14 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Director.cs" />
-     <Compile Include="Assets\FirstController.cs" />
-     <Compile Include="Assets\ISceneController.cs" />
-     <Compile Include="Assets\IUserAction.cs" />
-     <Compile Include="Assets\MoveBow.cs" />
-     <Compile Include="Assets\SkythianCat\Glowing_Forest\Scripts\WaterGroup.cs" />
-     <Compile Include="Assets\TargetTrigger.cs" />
-     <Compile Include="Assets\UIController.cs" />
+     <Compile Include="Assets\Scripts\Director.cs" />
+     <Compile Include="Assets\Scripts\FirstController.cs" />
+     <Compile Include="Assets\Scripts\ISceneController.cs" />
+     <Compile Include="Assets\Scripts\IUserAction.cs" />
+     <Compile Include="Assets\Scripts\MoveBow.cs" />
+     <Compile Include="Assets\Scripts\TargetTrigger.cs" />
+     <Compile Include="Assets\Scripts\UIController.cs" />
+     <Compile Include="Assets\Scripts\Wind.cs" />
      <None Include="Assets\LowpolyWeaponPack\README.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

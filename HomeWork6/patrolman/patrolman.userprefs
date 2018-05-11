@@ -1,15 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SSActionManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FirstController.cs">
     <Files>
-      <File FileName="Assets\IUserAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\UserActionController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Director.cs" Line="1" Column="1" />
+      <File FileName="Assets\UserActionController.cs" Line="29" Column="52" />
       <File FileName="Assets\ISceneController.cs" Line="1" Column="1" />
-      <File FileName="Assets\FirstController.cs" Line="1" Column="1" />
-      <File FileName="Assets\ISSActionCallback.cs" Line="11" Column="4" />
+      <File FileName="Assets\ISSActionCallback.cs" Line="1" Column="1" />
       <File FileName="Assets\SSAction.cs" Line="17" Column="5" />
       <File FileName="Assets\SSActionManager.cs" Line="16" Column="21" />
+      <File FileName="Assets\PatrolAction.cs" Line="49" Column="2" />
+      <File FileName="Assets\FirstController.cs" Line="143" Column="13" />
+      <File FileName="Assets\GameEventManager.cs" Line="10" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

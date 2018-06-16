@@ -223,13 +223,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Die.cs" />
-    <Compile Include="Assets\Director.cs" />
     <Compile Include="Assets\GrassRoadRace\Script\CameraMove.cs" />
-    <Compile Include="Assets\TrackLoop.cs" />
-    <Compile Include="Assets\TrackMove.cs" />
-    <Compile Include="Assets\UserGUI.cs" />
-    <Compile Include="Assets\VirtualButtonEventHandler.cs" />
+    <Compile Include="Assets\Scripts\Die.cs" />
+    <Compile Include="Assets\Scripts\Director.cs" />
+    <Compile Include="Assets\Scripts\TrackLoop.cs" />
+    <Compile Include="Assets\Scripts\TrackMove.cs" />
+    <Compile Include="Assets\Scripts\UserGUI.cs" />
+    <Compile Include="Assets\Scripts\VirtualButtonEventHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />

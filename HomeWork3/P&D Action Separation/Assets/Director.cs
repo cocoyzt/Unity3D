@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Director : System.Object {
 
-	public ISceneControl currentSceneControl { get; set; }
-	private static Director director;
-
-	private Director(){
-	}
+	public bool running{ get; set; }
+	public ISceneController currentSceneControl{ get; set; }
+	private static Director _instance;
 
 	public static Director getInstance(){
-		if (director == null)
-			director = new Director ();
-		return director;
+		if (_instance == null) {
+			_instance = new Director ();
+		}
+		return _instance;
 	}
 }

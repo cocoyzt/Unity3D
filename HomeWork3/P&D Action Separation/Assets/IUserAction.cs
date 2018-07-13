@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum GameState {WIN, FAILED, NOT_ENDED}
 
-public interface IUserAction{
+public interface IUserAction {
 	void MoveBoat ();
 	void GameOver ();
 	GameState getGameState ();
